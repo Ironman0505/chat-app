@@ -4,7 +4,7 @@
   "description": "",
   "main": "srvr.js",
   "scripts": {
-    "start": "nodemon srvr.js"
+    "dev": "nodemon srvr.js"
   },
   "author": "",
   "license": "ISC",
