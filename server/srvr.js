@@ -48,7 +48,7 @@ io.on("connection",(socket)=>{
 })
 
 app.use('*',(re,res)=>{
-    res.sendFile(path.join(__dirname,'./../client/build'));
+    res.sendFile(path.join(__dirname,'./../client/build/index.html'));
 })
 
 server.listen(3003,()=>{
