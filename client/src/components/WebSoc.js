@@ -2,7 +2,8 @@ import React from 'react'
 import io  from "socket.io-client";
 import { useEffect,useState } from 'react';
 
-
+const srvradd="https://alienx-chat-demo.glitch.me"
+const add2="https://alienx-chat.onrender.com"
 const socket=io()
 
 function WebSoc() {
@@ -30,11 +31,12 @@ function WebSoc() {
   return (
     <div>
         
-        Hello Websockets
+        <h2 style={{textAlign:"center"}} >Hello Websockets</h2>
         <br/>
         <input type='text' onChange={e=>setRoom(e.target.value)} />
         <br/>
         <button onClick={joinRoom} >Join Room</button>
+        <br/>
         <br/>
         <input type='text' onChange={e=>Setmsg(e.target.value)} />
         <br/>

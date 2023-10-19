@@ -4,7 +4,7 @@ const {Server}=require("socket.io")
 
 
 const http=require("http")
-
+const path=require("path")
 // const smplmodel=require('./models/sample')
 // const mongoose=require("mongoose")
 
@@ -14,7 +14,7 @@ const app=express();
 
 app.use(cors())
 
-
+app.use(express.static(path.join(__dirname,'./../client/build')));
 // -----------Socket Code...
 const server=http.createServer(app);
 
@@ -34,7 +34,6 @@ io.on("connection",(socket)=>{
     //     socket.broadcast.emit("replymsg",data);
     // })
 
-
     // For a particular room
     socket.on("joinRoom",(room)=>{
         socket.join(room)
@@ -48,6 +47,9 @@ io.on("connection",(socket)=>{
 
 })
 
+app.use('*',(re,res)=>{
+    res.sendFile(path.join(__dirname,'./../client/build'));
+})
 
 server.listen(3003,()=>{
     console.log("Listening!!!")
