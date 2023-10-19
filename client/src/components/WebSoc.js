@@ -4,7 +4,7 @@ import { useEffect,useState } from 'react';
 
 const srvradd="https://alienx-chat-demo.glitch.me"
 const add2="https://alienx-chat.onrender.com"
-const socket=io()
+const socket=io('')
 
 function WebSoc() {
     const [msg,Setmsg]=useState();

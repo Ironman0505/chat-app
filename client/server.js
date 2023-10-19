@@ -38,6 +38,9 @@ io.on("connection",(socket)=>{
 
 })
 
+app.use('*',(re,res)=>{
+    res.sendFile(path.join(__dirname,'./build/index.html'));
+})
 
 server.listen(5555,()=>{
     console.log("Listening!!!")
